@@ -8,6 +8,7 @@ metadata:
 spec:
   selector:
     app: {{ $service.name }}
+  type: NodePort  
   ports:
     - protocol: TCP
       port: {{ $service.port }}
