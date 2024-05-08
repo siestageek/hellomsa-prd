@@ -10,18 +10,21 @@ services:
     image: "siestageek/frontendapp" # Replace with your actual image name
     tag: latest
     port: 3000
+    nport: 32321
 
   productapp:
     name: productapp  
     image: "siestageek/productapp" # Replace with your actual image name
     tag: latest
     port: 8000
+    nport: 32322    
 
   userapp:
     name: userapp  
     image: "siestageek/userapp" # Replace with your actual image name
     tag: latest
     port: 8010
+    nport: 32323    
 
 nginx:
   image: nginx
