@@ -55,3 +55,23 @@ spec:
       - name: html-volume
         configMap:
           name: nginx-html
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node1-exporter
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: node1-exporter
+  template:
+    metadata:
+      labels:
+        app: node1-exporter
+    spec:
+      containers:
+      - name: node1-exporter
+        image: prom/node-exporter:latest
+        ports:
+        - containerPort: 9100
